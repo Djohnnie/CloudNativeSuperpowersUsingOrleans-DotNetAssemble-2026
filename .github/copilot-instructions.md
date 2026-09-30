@@ -4,12 +4,43 @@
 
 Conference-session material for **"Cloud-Native Superpowers with Microsoft Orleans"** (.NET Assemble! 2026, by Johnny Hooyberghs).
 
-Today the repository contains **only presentation assets** — there is no solution, project, build, test, or lint pipeline. `.gitignore` is the standard Visual Studio/.NET one, so .NET demo code is expected to be added later under the repository root. When you add such code, create a `.sln` at the root and use standard `dotnet build` / `dotnet test` workflows (single test: `dotnet test --filter "FullyQualifiedName~MyTest"`).
+The repository holds two kinds of content: hand-authored SVG presentation slides, and runnable Orleans demo applications under `example-N/`.
 
 ## Layout
 
-- `README.md` — the narrated deck: every slide is embedded as an image plus a short description.
+- `README.md` — the narrated deck: every slide is embedded as an image plus a short description, followed by an index of the examples.
 - `_slides/` — hand-authored SVG slides and shared assets.
+- `example-1/` — "Parcel Tracker", the dead-simple Orleans 10 demo: a single grain type (`IPackageGrain`, one instance per tracking number), Aspire AppHost, three silo hosts + dashboard, web control panel, TestCluster tests. No external infrastructure at all.
+- `example-2/` — "Superhero HQ", an Orleans 10 demo (Aspire AppHost, silo host + dashboard, console client, web control panel, TestCluster tests), backed by Redis clustering and persistence.
+
+## Demo applications
+
+Each `example-N/` folder is a self-contained solution with its own `global.json`, `README.md` and `.slnx`. Build and test from that folder:
+
+```powershell
+dotnet build
+dotnet test
+dotnet test --filter-method "*Parallel_scans_never_lose_an_update*"
+```
+
+Examples are ordered by difficulty: `example-1` is the "you can follow this" opener with one
+grain type and nothing installed, `example-2` is the fuller story. Conventions that every
+example follows:
+
+- Projects split as `src/*.Abstractions` (grain interfaces and `[GenerateSerializer]` records shared with clients), `src/*.Grains` (grain implementations), `src/*.Silo` (ASP.NET Core silo host), `src/*.Web` (browser control panel), optionally `src/*.Client` (console demo), `src/*.AppHost` (Aspire orchestration), `src/*.ServiceDefaults`, `tests/*.Tests`.
+- Aspire is the primary way to run a demo (`dotnet run --project src/<Name>.AppHost`), but every host must keep working when started by hand.
+- Two ways to model a cluster in the AppHost, and they are not interchangeable:
+  - With external membership (example 2): `AddOrleans(...).WithClustering(redis).WithGrainStorage(...)` and `WithReplicas(n)`.
+  - Without any infrastructure (example 1): do **not** use `AddOrleans().WithDevelopmentClustering()` together with `WithReplicas(n)`. Aspire never sets `Orleans:Clustering:PrimarySiloEndPoint`, so every replica falls back to being its own primary and you silently get N one-silo clusters. Instead add the silo project as N separate resources with `--instance N` and let the silo call `UseLocalhostClustering` with an explicit fixed primary endpoint.
+- Multiple silos of one cluster are started from the same host project with `--instance N`; that number derives the HTTP port (`500N`), silo port (`1111N`) and gateway port (`3000N`), with instance 1 acting as the primary silo. The AppHost pins the same ports so slide URLs keep working either way.
+- The grain project needs `Microsoft.Orleans.Runtime`, not just `Microsoft.Orleans.Sdk`: in Orleans 10, `IPersistentState<T>`, `PersistentStateAttribute` and `ILocalSiloDetails` are not in the Sdk package.
+- Orleans packages are pinned to the same version across all projects (currently `10.3.1`).
+- The demos are deliberately written so each step maps to a slide (virtual actor, identity/behaviour/state, grain-to-grain calls, placement, single-threaded turns). `PackageGrain.ScanAsync` and `HeroGrain.TrainAsync` read, await and write without a lock on purpose — that is the single-threading demo, so do not "fix" it.
+- Grain state uses memory storage so the demo runs with nothing installed. Memory storage is cluster-wide, because the provider keeps state inside grains.
+- Demo grains are marked `[RandomPlacement]`. Orleans' default placement prefers the calling silo, which makes one silo look like it does all the work when demonstrating scale-out.
+- The `*.Web` control panel is never an Orleans client: it proxies `/api/{**path}` to a silo server-side, which avoids CORS and keeps "the grain lives on another silo" visible.
+- The dashboard comes from `Microsoft.Orleans.Dashboard` (`silo.AddDashboard()` plus `app.MapOrleansDashboard(routePrefix: "/dashboard")`), which is the official package as of Orleans 10 and still in preview.
+
 
 ## Slides are hand-written SVG, not exported from a slide tool
 
@@ -53,4 +84,4 @@ Sections are ordered by slide number, and the TL;DR is deliberately written as "
 
 ## Verification
 
-There is no automated check. After editing an SVG, confirm it renders (open it in a browser) and that nothing overflows the 3840x2160 canvas before committing.
+There is no automated check for the slides. After editing an SVG, confirm it renders (open it in a browser) and that nothing overflows the 3840x2160 canvas before committing. Demo code is verified with `dotnet build` and `dotnet test` inside the relevant `example-N/` folder.

@@ -7,13 +7,15 @@
 			<stop offset="0" style="stop-color:#FFF3CC"/>
 			<stop offset="1" style="stop-color:#FFD9A6"/>
 		</radialGradient>
+		<marker id="arrow" viewBox="0 0 20 20" refX="17" refY="10" markerWidth="9" markerHeight="9" orient="auto">
+			<path d="M2 2 L18 10 L2 18" fill="none" stroke="#CC6600" stroke-width="3" stroke-linejoin="round"/>
+		</marker>
 	</defs>
 	<rect x="0" y="0" width="3840" height="2160" fill="url(#bgGradient)"/>
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">CSharpWars: Add a Validator</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +117,53 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<text x="120" y="340" font-family="Arial, Helvetica, sans-serif" font-size="64" fill="#706F6F">Version 2: a new service for validation</text>
+	<g fill="none" stroke="#CC6600" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)">
+		<path d="M1890 720 V980"/>
+		<path d="M1890 1220 V1530"/>
+		<path d="M1130 1330 L1390 1650"/>
+		<path d="M2670 1120 L2390 1650"/>
+		<path d="M3170 1220 V1530"/>
+	</g>
+	<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#1D1D1B">
+		<g>
+			<rect x="1390" y="480" width="1000" height="240" rx="42" fill="#FFF9EA" stroke="#CC6600" stroke-width="6"/>
+			<text x="1890" y="582" font-size="72" font-weight="bold">Frontend</text>
+			<text x="1890" y="662" font-size="58" fill="#706F6F">(Unity)</text>
+		</g>
+		<g>
+			<rect x="1390" y="980" width="1000" height="240" rx="42" fill="#FFF9EA" stroke="#CC6600" stroke-width="6"/>
+			<text x="1890" y="1082" font-size="72" font-weight="bold">HTTP API</text>
+			<text x="1890" y="1162" font-size="58" fill="#706F6F">(ASP.NET Web API)</text>
+		</g>
+		<g>
+			<rect x="180" y="1200" width="950" height="240" rx="42" fill="#FFF9EA" stroke="#CC6600" stroke-width="6"/>
+			<text x="655" y="1302" font-size="72" font-weight="bold">Processor</text>
+			<text x="655" y="1382" font-size="58" fill="#706F6F">(Worker Service)</text>
+		</g>
+		<g>
+			<rect x="2670" y="980" width="1000" height="240" rx="42" fill="#FFF9EA" stroke="#CC6600" stroke-width="6"/>
+			<text x="3170" y="1082" font-size="72" font-weight="bold">Web UI</text>
+			<text x="3170" y="1162" font-size="58" fill="#706F6F">(ASP.NET MVC)</text>
+		</g>
+		<g>
+			<rect x="1390" y="1530" width="1000" height="240" rx="42" fill="#FFF9EA" stroke="#CC6600" stroke-width="6"/>
+			<text x="1890" y="1632" font-size="72" font-weight="bold">SQL Database</text>
+			<text x="1890" y="1712" font-size="58" fill="#706F6F">(Azure SQL)</text>
+		</g>
+		<g>
+			<rect x="2670" y="1530" width="1000" height="240" rx="42" fill="#FFF9EA" stroke="#CC6600" stroke-width="8"/>
+			<text x="3170" y="1632" font-size="72" font-weight="bold">Validator</text>
+			<text x="3170" y="1712" font-size="58" fill="#706F6F">(Worker Service)</text>
+		</g>
+	</g>
+	<!-- Footer link -->
+	<a href="https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026">
+		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
+	</a>
+
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">07</text>
+</svg>

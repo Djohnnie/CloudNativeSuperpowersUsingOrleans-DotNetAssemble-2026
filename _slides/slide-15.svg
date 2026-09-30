@@ -7,13 +7,15 @@
 			<stop offset="0" style="stop-color:#FFF3CC"/>
 			<stop offset="1" style="stop-color:#FFD9A6"/>
 		</radialGradient>
+		<marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+			<path d="M0 0 L12 6 L0 12 z" fill="#CC6600"/>
+		</marker>
 	</defs>
 	<rect x="0" y="0" width="3840" height="2160" fill="url(#bgGradient)"/>
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Example 2: Superhero HQ</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +117,47 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<text x="120" y="340" font-family="Arial, Helvetica, sans-serif" font-size="64" fill="#706F6F">More grain types, grain-to-grain calls, and Redis-backed state.</text>
+
+	<!-- A city orchestrates heroes; the heroes call a villain. -->
+	<rect x="150" y="580" width="830" height="380" rx="44" fill="#FFFFFF" fill-opacity="0.8" stroke="#CC6600" stroke-width="6"/>
+	<text x="565" y="735" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#1D1D1B" text-anchor="middle">CityGrain</text>
+	<text x="565" y="830" font-family="Arial, Helvetica, sans-serif" font-size="56" fill="#706F6F" text-anchor="middle">sends the roster</text>
+	<path d="M980 760 H1100" fill="none" stroke="#CC6600" stroke-width="12"/>
+	<path d="M1100 760 V625 H1260" fill="none" stroke="#CC6600" stroke-width="12" marker-end="url(#arrow)"/>
+	<path d="M1100 760 V995 H1260" fill="none" stroke="#CC6600" stroke-width="12" marker-end="url(#arrow)"/>
+	<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+		<rect x="1270" y="490" width="950" height="270" rx="42" fill="#FFE0BF" stroke="#CC6600" stroke-width="6"/>
+		<text x="1745" y="600" font-size="72" font-weight="bold" fill="#1D1D1B">HeroGrain</text>
+		<text x="1745" y="685" font-size="54" fill="#706F6F">ironman</text>
+		<rect x="1270" y="860" width="950" height="270" rx="42" fill="#FFE0BF" stroke="#CC6600" stroke-width="6"/>
+		<text x="1745" y="970" font-size="72" font-weight="bold" fill="#1D1D1B">HeroGrain</text>
+		<text x="1745" y="1055" font-size="54" fill="#706F6F">another hero</text>
+	</g>
+	<path d="M2220 625 H2590" fill="none" stroke="#CC6600" stroke-width="12" marker-end="url(#arrow)"/>
+	<path d="M2220 995 H2590" fill="none" stroke="#CC6600" stroke-width="12" marker-end="url(#arrow)"/>
+	<rect x="2600" y="580" width="1090" height="380" rx="44" fill="#FFFFFF" fill-opacity="0.8" stroke="#CC6600" stroke-width="6"/>
+	<text x="3145" y="735" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#1D1D1B" text-anchor="middle">VillainGrain</text>
+	<text x="3145" y="830" font-family="Arial, Helvetica, sans-serif" font-size="56" fill="#706F6F" text-anchor="middle">takes the hits</text>
+
+	<!-- Aspire wires up Redis membership and persistent grain storage. -->
+	<rect x="180" y="1300" width="3480" height="500" rx="48" fill="#FFFFFF" fill-opacity="0.45" stroke="#CC6600" stroke-width="6"/>
+	<text x="360" y="1430" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="bold" fill="#1D1D1B">Aspire wires up Redis, three silo replicas, a web panel + a console demo</text>
+	<g font-family="Arial, Helvetica, sans-serif" font-size="62" fill="#1D1D1B" text-anchor="middle">
+		<rect x="330" y="1520" width="970" height="170" rx="36" fill="#FFF9EA" stroke="#CC6600" stroke-width="5"/>
+		<text x="815" y="1628">Redis: cluster + state</text>
+		<rect x="1435" y="1520" width="970" height="170" rx="36" fill="#FFF9EA" stroke="#CC6600" stroke-width="5"/>
+		<text x="1920" y="1628">3 silo replicas</text>
+		<rect x="2540" y="1520" width="970" height="170" rx="36" fill="#FFF9EA" stroke="#CC6600" stroke-width="5"/>
+		<text x="3025" y="1628">Guided console demo</text>
+	</g>
+	<text x="1920" y="1920" font-family="Arial, Helvetica, sans-serif" font-size="62" fill="#706F6F" text-anchor="middle">Watch missions, 100 parallel calls, and heroes spreading across silos.</text>
+	<!-- Footer link -->
+	<a href="https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026/tree/main/example-2">
+		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46"
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026/example-2</text>
+	</a>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">15</text>
+</svg>

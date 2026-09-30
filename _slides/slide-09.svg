@@ -12,8 +12,7 @@
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">What Orleans Gives You</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +114,52 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<defs>
+		<marker id="arrowInk" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#1D1D1B"/>
+		</marker>
+		<marker id="arrowOrange" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#CC6600"/>
+		</marker>
+	</defs>
+	<!-- What Orleans gives you -->
+	<rect x="220" y="500" width="1640" height="520" rx="40" ry="40" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<circle cx="420" cy="760" r="150" fill="#FFFFFF" fill-opacity="0.9" stroke="#4E9A51" stroke-width="6"/>
+	<rect x="330" y="780" width="50" height="70" rx="10" ry="10" fill="#D6EFD3" stroke="#4E9A51" stroke-width="5"/>
+	<rect x="400" y="730" width="50" height="120" rx="10" ry="10" fill="#D6EFD3" stroke="#4E9A51" stroke-width="5"/>
+	<rect x="470" y="680" width="50" height="170" rx="10" ry="10" fill="#D6EFD3" stroke="#4E9A51" stroke-width="5"/>
+	<path d="M 310 870 L 530 870" fill="none" stroke="#1D1D1B" stroke-width="9" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+	<text x="640" y="720" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="bold" fill="#4E9A51" text-anchor="start">Elastic scale</text>
+	<text x="640" y="830" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">add or remove servers and Orleans</text>
+	<text x="640" y="910" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">rebalances, staying fault tolerant</text>
+	<rect x="1980" y="500" width="1640" height="520" rx="40" ry="40" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<circle cx="2180" cy="760" r="150" fill="#FFFFFF" fill-opacity="0.9" stroke="#2E75B6" stroke-width="6"/>
+	<text x="2180" y="815" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="bold" fill="#2E75B6" text-anchor="middle">{ }</text>
+	<text x="2400" y="720" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="bold" fill="#2E75B6" text-anchor="start">One programming model</text>
+	<text x="2400" y="830" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">the same patterns and APIs, even if</text>
+	<text x="2400" y="910" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">distributed systems are new to you</text>
+	<rect x="220" y="1140" width="1640" height="520" rx="40" ry="40" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<circle cx="420" cy="1400" r="150" fill="#FFFFFF" fill-opacity="0.9" stroke="#CC6600" stroke-width="6"/>
+	<circle cx="420" cy="1400" r="105" fill="#FFE0BF" stroke="#CC6600" stroke-width="7"/>
+	<ellipse cx="420" cy="1400" rx="45" ry="105" fill="none" stroke="#CC6600" stroke-width="6"/>
+	<line x1="315" y1="1400" x2="525" y2="1400" stroke="#CC6600" stroke-width="6"/>
+	<line x1="420" y1="1295" x2="420" y2="1505" stroke="#CC6600" stroke-width="6"/>
+	<text x="640" y="1360" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="bold" fill="#CC6600" text-anchor="start">Runs where .NET runs</text>
+	<text x="640" y="1470" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">Linux, Windows, macOS —</text>
+	<text x="640" y="1550" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">cloud-native by design</text>
+	<rect x="1980" y="1140" width="1640" height="520" rx="40" ry="40" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<circle cx="2180" cy="1400" r="150" fill="#FFFFFF" fill-opacity="0.9" stroke="#2E75B6" stroke-width="6"/>
+	<rect x="2080" y="1300" width="90" height="90" rx="16" ry="16" fill="#CFE3F7" stroke="#2E75B6" stroke-width="6"/>
+	<rect x="2190" y="1300" width="90" height="90" rx="16" ry="16" fill="#CFE3F7" stroke="#2E75B6" stroke-width="6"/>
+	<rect x="2135" y="1410" width="90" height="90" rx="16" ry="16" fill="#CFE3F7" stroke="#2E75B6" stroke-width="6"/>
+	<text x="2400" y="1360" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="bold" fill="#2E75B6" text-anchor="start">Modern hosting</text>
+	<text x="2400" y="1470" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">Kubernetes, Azure App Service</text>
+	<text x="2400" y="1550" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#706F6F" text-anchor="start">and Azure Container Apps</text>
+	<text x="1920" y="1870" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="normal" fill="#706F6F" text-anchor="middle">You focus on the logic of your app — Orleans takes care of the plumbing.</text>
+	<!-- Footer link -->
+	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">09</text>
+</svg>

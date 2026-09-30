@@ -12,8 +12,7 @@
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">CSharpWars: Game Loop</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -113,8 +112,25 @@
 <polygon class="st0" points="199.7,37.6 199.7,56.3 208.7,45.7 208.7,37.1 216.5,36.7 221.3,31 195.7,31 195,31 176.4,31 
 	176.4,83.6 196.1,60.6 196.1,54.9 185.5,59.8 185.5,52 194.4,49.9 194.4,43.2 185.5,44.1 185.5,38.3 "/>
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
-	</svg>
-
+	</svg>	<!-- CSharpWars turn-loop code -->
+	<rect x="180" y="420" width="3480" height="1450" rx="20" fill="#1D1D1B" stroke="#CC6600" stroke-width="8"/>
+	<g font-family="Consolas, 'Courier New', monospace" font-size="66" font-weight="bold">
+		<text x="300" y="570" fill="#F4F4F4"><tspan fill="#6E7DFF">var</tspan><tspan> step = </tspan><tspan fill="#D8B45A">LoadFromMemory</tspan><tspan fill="#5CC5E0">&lt;Int32&gt;</tspan><tspan>(</tspan><tspan fill="#FF7777">&quot;STEP&quot;</tspan><tspan>);</tspan></text>
+		<text x="300" y="720" fill="#F4F4F4"><tspan fill="#E27AFF">if</tspan><tspan> ( step % </tspan><tspan fill="#5FE39B">3</tspan><tspan> == </tspan><tspan fill="#5FE39B">0</tspan><tspan> )</tspan></text>
+		<text x="300" y="870" fill="#F4F4F4">{</text>
+		<text x="480" y="1020" fill="#F4F4F4"><tspan fill="#D8B45A">TurnLeft</tspan><tspan>();</tspan></text>
+		<text x="300" y="1170" fill="#F4F4F4">}</text>
+		<text x="300" y="1320" fill="#F4F4F4"><tspan fill="#E27AFF">else</tspan></text>
+		<text x="300" y="1470" fill="#F4F4F4">{</text>
+		<text x="480" y="1620" fill="#F4F4F4"><tspan fill="#D8B45A">WalkForward</tspan><tspan>();</tspan></text>
+		<text x="300" y="1770" fill="#F4F4F4">}</text>
+	</g>
+	<text x="300" y="1840" font-family="Consolas, 'Courier New', monospace" font-size="66" font-weight="bold" fill="#F4F4F4"><tspan fill="#D8B45A">StoreInMemory</tspan><tspan fill="#5CC5E0">&lt;Int32&gt;</tspan><tspan>(</tspan><tspan fill="#FF7777">&quot;STEP&quot;</tspan><tspan>, </tspan><tspan fill="#6E7DFF">step</tspan><tspan>);</tspan></text>
+	<!-- Footer link -->
+	<a href="https://github.com/Djohnnie/BuildingCloudNativeApplicationsUsingOrleans-UpdateConferenceKrakow-2025">
+		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">github.com/Djohnnie/BuildingCloudNativeApplicationsUsingOrleans-UpdateConferenceKrakow-2025</text>
+	</a>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">05</text></svg>

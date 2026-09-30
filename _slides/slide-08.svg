@@ -12,8 +12,7 @@
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">What is Orleans?</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +114,58 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<defs>
+		<marker id="arrowInk" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#1D1D1B"/>
+		</marker>
+		<marker id="arrowOrange" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#CC6600"/>
+		</marker>
+	</defs>
+	<!-- Familiar .NET code on the left -->
+	<rect x="180" y="660" width="980" height="560" rx="40" ry="40" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<text x="670" y="1010" font-family="Arial, Helvetica, sans-serif" font-size="220" font-weight="bold" fill="#CC6600" text-anchor="middle">C#</text>
+	<text x="670" y="1330" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#706F6F" text-anchor="middle">your familiar .NET code</text>
+	<line x1="1220" y1="940" x2="1480" y2="940" stroke="#CC6600" stroke-width="16" stroke-linecap="round" marker-end="url(#arrowOrange)"/>
+	<text x="1350" y="870" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#CC6600" text-anchor="middle">Orleans</text>
+
+	<!-- One cluster, many servers -->
+	<rect x="1540" y="660" width="2120" height="560" rx="60" ry="60" fill="#FFFFFF" fill-opacity="0.45" stroke="#CC6600" stroke-width="6" stroke-dasharray="26 20"/>
+	<rect x="1620" y="740" width="260" height="400" rx="20" ry="20" fill="#FFFFFF" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="1660" y="800" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="1660" y="900" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="1660" y="1000" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<circle cx="1835" cy="1095" r="14" fill="#4E9A51"/>
+	<rect x="2045" y="740" width="260" height="400" rx="20" ry="20" fill="#FFFFFF" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="2085" y="800" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="2085" y="900" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="2085" y="1000" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<circle cx="2260" cy="1095" r="14" fill="#4E9A51"/>
+	<rect x="2470" y="740" width="260" height="400" rx="20" ry="20" fill="#FFFFFF" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="2510" y="800" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="2510" y="900" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="2510" y="1000" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<circle cx="2685" cy="1095" r="14" fill="#4E9A51"/>
+	<rect x="2895" y="740" width="260" height="400" rx="20" ry="20" fill="#FFFFFF" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="2935" y="800" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="2935" y="900" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="2935" y="1000" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<circle cx="3110" cy="1095" r="14" fill="#4E9A51"/>
+	<rect x="3320" y="740" width="260" height="400" rx="20" ry="20" fill="#FFFFFF" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="3360" y="800" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="3360" y="900" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<rect x="3360" y="1000" width="180" height="52" rx="10" ry="10" fill="#FFE0BF" stroke="#CC6600" stroke-width="3"/>
+	<circle cx="3535" cy="1095" r="14" fill="#4E9A51"/>
+	<text x="2600" y="1330" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#706F6F" text-anchor="middle">one cluster, many servers</text>
+
+	<!-- Statement -->
+	<text x="985" y="1640" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="normal" fill="#1D1D1B" text-anchor="start">Orleans&#160;=&#160;</text>
+	<text x="1595" y="1640" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="bold" fill="#CC6600" text-anchor="start">“Distributed&#160;.NET”</text>
+	<text x="1920" y="1870" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="normal" fill="#706F6F" text-anchor="middle">Scale from a single server to thousands — without changing how you write code.</text>
+	<!-- Footer link -->
+	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">08</text>
+</svg>

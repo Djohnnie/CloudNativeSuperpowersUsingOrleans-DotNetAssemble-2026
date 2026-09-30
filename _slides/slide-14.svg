@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	 width="3840" height="2160" viewBox="0 0 3840 2160">
-	<!-- Background: light, pastel radial gradient using softened yellow/orange tones from slide-01 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
 	<defs>
 		<radialGradient id="bgGradient" cx="50%" cy="42%" r="75%" gradientUnits="objectBoundingBox">
 			<stop offset="0" style="stop-color:#FFF3CC"/>
 			<stop offset="1" style="stop-color:#FFD9A6"/>
 		</radialGradient>
+		<marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+			<path d="M0 0 L12 6 L0 12 z" fill="#CC6600"/>
+		</marker>
 	</defs>
+	<!-- Background: light, pastel radial gradient using softened yellow/orange tones from slide-01 -->
 	<rect x="0" y="0" width="3840" height="2160" fill="url(#bgGradient)"/>
-
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
-
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Example 1: Parcel Tracker</text>
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
 <style type="text/css">
@@ -114,7 +113,41 @@
 	176.4,83.6 196.1,60.6 196.1,54.9 185.5,59.8 185.5,52 194.4,49.9 194.4,43.2 185.5,44.1 185.5,38.3 "/>
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
+	<text x="120" y="340" font-family="Arial, Helvetica, sans-serif" font-size="64" fill="#706F6F">One grain type. One grain per tracking number. No external infrastructure.</text>
 
+	<!-- Web control panel calls the silo HTTP endpoints; Orleans routes to a grain. -->
+	<rect x="160" y="620" width="720" height="400" rx="44" fill="#FFFFFF" fill-opacity="0.8" stroke="#CC6600" stroke-width="6"/>
+	<text x="520" y="775" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Web panel</text>
+	<text x="520" y="865" font-family="Arial, Helvetica, sans-serif" font-size="56" fill="#706F6F" text-anchor="middle">scan a parcel</text>
+	<path d="M900 820 H1160" stroke="#CC6600" stroke-width="12" marker-end="url(#arrow)"/>
+	<rect x="1220" y="620" width="840" height="400" rx="44" fill="#FFFFFF" fill-opacity="0.8" stroke="#CC6600" stroke-width="6"/>
+	<text x="1640" y="775" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Silo HTTP API</text>
+	<text x="1640" y="865" font-family="Arial, Helvetica, sans-serif" font-size="56" fill="#706F6F" text-anchor="middle">routes the call</text>
+	<path d="M2080 820 H2330" stroke="#CC6600" stroke-width="12" marker-end="url(#arrow)"/>
+	<rect x="2390" y="530" width="1280" height="580" rx="54" fill="#FFFFFF" fill-opacity="0.55" stroke="#CC6600" stroke-width="6" stroke-dasharray="25 18"/>
+	<text x="3030" y="620" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="bold" fill="#CC6600" text-anchor="middle">ORLEANS CLUSTER</text>
+	<rect x="2480" y="690" width="1100" height="310" rx="40" fill="#FFE0BF" stroke="#CC6600" stroke-width="6"/>
+	<text x="3030" y="815" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#1D1D1B" text-anchor="middle">PackageGrain</text>
+	<text x="3030" y="910" font-family="Arial, Helvetica, sans-serif" font-size="56" fill="#706F6F" text-anchor="middle">PKG-000001</text>
+
+	<!-- Three cluster members and the minimal in-memory setup. -->
+	<rect x="180" y="1270" width="3480" height="500" rx="48" fill="#FFFFFF" fill-opacity="0.45" stroke="#CC6600" stroke-width="6"/>
+	<text x="360" y="1400" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="bold" fill="#1D1D1B">Aspire starts three silos + the web panel</text>
+	<g font-family="Arial, Helvetica, sans-serif" font-size="64" text-anchor="middle" fill="#1D1D1B">
+		<rect x="370" y="1480" width="850" height="175" rx="36" fill="#FFF9EA" stroke="#CC6600" stroke-width="5"/>
+		<text x="795" y="1592">Silo 1</text>
+		<rect x="1495" y="1480" width="850" height="175" rx="36" fill="#FFF9EA" stroke="#CC6600" stroke-width="5"/>
+		<text x="1920" y="1592">Silo 2</text>
+		<rect x="2620" y="1480" width="850" height="175" rx="36" fill="#FFF9EA" stroke="#CC6600" stroke-width="5"/>
+		<text x="3045" y="1592">Silo 3</text>
+	</g>
+	<text x="1920" y="1900" font-family="Arial, Helvetica, sans-serif" font-size="62" fill="#706F6F" text-anchor="middle">Scan 1,000 parcels to watch placement; state and clustering stay in memory.</text>
+	<!-- Footer link -->
+	<a href="https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026/tree/main/example-1">
+		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46"
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026/example-1</text>
+	</a>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">14</text>
+</svg>

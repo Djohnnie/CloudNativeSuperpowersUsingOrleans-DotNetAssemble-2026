@@ -12,8 +12,7 @@
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Identity, Behaviour and State</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +114,37 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<!-- The grain formula -->
+	<text x="225" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="bold" fill="#1D1D1B" text-anchor="start">PlayerGrain</text>
+	<text x="1109" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="normal" fill="#1D1D1B" text-anchor="start">&#160;=&#160;</text>
+	<text x="1265" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="bold" fill="#CC6600" text-anchor="start">identity</text>
+	<text x="1908" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="normal" fill="#1D1D1B" text-anchor="start">&#160;+&#160;</text>
+	<text x="2063" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="bold" fill="#2E75B6" text-anchor="start">behaviour</text>
+	<text x="2787" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="normal" fill="#1D1D1B" text-anchor="start">&#160;&#160;[&#160;+&#160;</text>
+	<text x="3098" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="bold" fill="#4E9A51" text-anchor="start">state</text>
+	<text x="3500" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="normal" fill="#1D1D1B" text-anchor="start">&#160;]</text>
+	<path d="M 1273 894 L 1273 860 L 1900 860 L 1900 894" fill="none" stroke="#CC6600" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M 1586 860 L 1586 816" fill="none" stroke="#CC6600" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<text x="1586" y="760" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#CC6600" text-anchor="middle">"player/djohnnie"</text>
+	<path d="M 2071 1116 L 2071 1150 L 2779 1150 L 2779 1116" fill="none" stroke="#2E75B6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M 2425 1150 L 2425 1194" fill="none" stroke="#2E75B6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<text x="2425" y="1360" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#2E75B6" text-anchor="middle">class PlayerGrain : Grain, IPlayerGrain</text>
+	<path d="M 3106 894 L 3106 860 L 3492 860 L 3492 894" fill="none" stroke="#4E9A51" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M 3299 860 L 3299 816" fill="none" stroke="#4E9A51" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<text x="3298" y="760" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#4E9A51" text-anchor="middle">in memory or persisted</text>
+	<circle cx="640" cy="1540" r="18" fill="#CC6600"/>
+	<text x="700" y="1560" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="bold" fill="#CC6600" text-anchor="start">identity</text>
+	<text x="1090" y="1560" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#706F6F" text-anchor="start">a unique key you choose — no lookup, no registry</text>
+	<circle cx="640" cy="1650" r="18" fill="#2E75B6"/>
+	<text x="700" y="1670" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="bold" fill="#2E75B6" text-anchor="start">behaviour</text>
+	<text x="1090" y="1670" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#706F6F" text-anchor="start">an interface of async methods, called one at a time</text>
+	<circle cx="640" cy="1760" r="18" fill="#4E9A51"/>
+	<text x="700" y="1780" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="bold" fill="#4E9A51" text-anchor="start">state</text>
+	<text x="1090" y="1780" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#706F6F" text-anchor="start">optional, kept in memory and saved to storage</text>
+	<!-- Footer link -->
+	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">12</text>
+</svg>

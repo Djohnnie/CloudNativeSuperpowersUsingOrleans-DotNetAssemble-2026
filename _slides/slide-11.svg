@@ -12,8 +12,7 @@
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Grain Lifecycle</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +114,42 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<defs>
+		<marker id="arrowInk" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#1D1D1B"/>
+		</marker>
+		<marker id="arrowOrange" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#CC6600"/>
+		</marker>
+	</defs>
+	<!-- Lifecycle ring -->
+	<path d="M 1218.3 918.8 A 730 730 0 0 1 1718.8 418.3" fill="none" stroke="#1D1D1B" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+	<text x="1283" y="501" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="normal" fill="#706F6F" text-anchor="middle">single call arrives</text>
+	<path d="M 2121.2 418.3 A 730 730 0 0 1 2621.7 918.8" fill="none" stroke="#1D1D1B" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+	<text x="2556" y="501" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="normal" fill="#706F6F" text-anchor="middle">OnActivateAsync</text>
+	<path d="M 2621.7 1321.2 A 730 730 0 0 1 2121.2 1821.7" fill="none" stroke="#1D1D1B" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+	<text x="2556" y="1774" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="normal" fill="#706F6F" text-anchor="middle">idle for too long</text>
+	<path d="M 1718.8 1821.7 A 730 730 0 0 1 1218.3 1321.2" fill="none" stroke="#1D1D1B" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+	<text x="1283" y="1774" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="normal" fill="#706F6F" text-anchor="middle">state written</text>
+
+	<!-- Lifecycle states -->
+	<circle cx="1920" cy="650" r="220" fill="#D6EFD3" fill-opacity="0.95" stroke="#4E9A51" stroke-width="8"/>
+	<text x="1920" y="668" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Activating</text>
+	<circle cx="2390" cy="1120" r="220" fill="#CFE3F7" fill-opacity="0.95" stroke="#2E75B6" stroke-width="8"/>
+	<text x="2390" y="1103" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Active</text>
+	<text x="2390" y="1173" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#1D1D1B" text-anchor="middle">in memory</text>
+	<circle cx="1920" cy="1590" r="220" fill="#D6EFD3" fill-opacity="0.95" stroke="#4E9A51" stroke-width="8"/>
+	<text x="1920" y="1608" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Deactivating</text>
+	<circle cx="1450" cy="1120" r="220" fill="#FFE0BF" fill-opacity="0.95" stroke="#CC6600" stroke-width="8"/>
+	<text x="1450" y="1103" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Persisted</text>
+	<text x="1450" y="1173" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="bold" fill="#1D1D1B" text-anchor="middle">state</text>
+	<text x="1920" y="1110" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="bold" fill="#CC6600" text-anchor="middle">Grain</text>
+	<text x="1920" y="1205" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="bold" fill="#CC6600" text-anchor="middle">lifecycle</text>
+	<text x="1920" y="1990" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="normal" fill="#706F6F" text-anchor="middle">Orleans runs this cycle for you — activation, deactivation and state are automatic.</text>
+	<!-- Footer link -->
+	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">11</text>
+</svg>

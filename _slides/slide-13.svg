@@ -12,8 +12,7 @@
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Hosts and Silos</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +114,46 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<!-- Cluster outline -->
+	<rect x="200" y="430" width="3440" height="1330" rx="60" ry="60" fill="#FFFFFF" fill-opacity="0.35" stroke="#CC6600" stroke-width="6" stroke-dasharray="26 20"/>
+	<text x="270" y="545" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="bold" fill="#CC6600" text-anchor="start">Orleans cluster</text>
+
+	<!-- Silos and the grains they host -->
+	<rect x="320" y="610" width="960" height="980" rx="30" ry="30" fill="#FFFFFF" fill-opacity="0.75" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="390" y="680" width="820" height="130" rx="24" ry="24" fill="#FFE0BF" stroke="#CC6600" stroke-width="5"/>
+	<text x="800" y="768" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">PlayerGrain</text>
+	<rect x="390" y="850" width="820" height="130" rx="24" ry="24" fill="#D6EFD3" stroke="#4E9A51" stroke-width="5"/>
+	<text x="800" y="938" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">ArenaGrain</text>
+	<rect x="390" y="1020" width="820" height="130" rx="24" ry="24" fill="#CFE3F7" stroke="#2E75B6" stroke-width="5"/>
+	<text x="800" y="1108" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">BotGrain</text>
+	<rect x="390" y="1190" width="820" height="130" rx="24" ry="24" fill="#E8E8E8" stroke="#706F6F" stroke-width="5"/>
+	<text x="800" y="1278" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">ScriptGrain</text>
+	<rect x="390" y="1360" width="820" height="130" rx="24" ry="24" fill="#FFE0BF" stroke="#CC6600" stroke-width="5"/>
+	<text x="800" y="1448" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">PlayerGrain</text>
+	<text x="800" y="1700" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="bold" fill="#CC6600" text-anchor="middle">Silo 1 (host process)</text>
+	<rect x="1440" y="610" width="960" height="980" rx="30" ry="30" fill="#FFFFFF" fill-opacity="0.75" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="1510" y="680" width="820" height="130" rx="24" ry="24" fill="#FFE0BF" stroke="#CC6600" stroke-width="5"/>
+	<text x="1920" y="768" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">PlayerGrain</text>
+	<rect x="1510" y="850" width="820" height="130" rx="24" ry="24" fill="#CFE3F7" stroke="#2E75B6" stroke-width="5"/>
+	<text x="1920" y="938" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">BotGrain</text>
+	<rect x="1510" y="1020" width="820" height="130" rx="24" ry="24" fill="#E8E8E8" stroke="#706F6F" stroke-width="5"/>
+	<text x="1920" y="1108" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">ScriptGrain</text>
+	<rect x="1510" y="1190" width="820" height="130" rx="24" ry="24" fill="#FFE0BF" stroke="#CC6600" stroke-width="5"/>
+	<text x="1920" y="1278" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">PlayerGrain</text>
+	<text x="1920" y="1700" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="bold" fill="#CC6600" text-anchor="middle">Silo 2 (host process)</text>
+	<rect x="2560" y="610" width="960" height="980" rx="30" ry="30" fill="#FFFFFF" fill-opacity="0.75" stroke="#1D1D1B" stroke-width="5"/>
+	<rect x="2630" y="680" width="820" height="130" rx="24" ry="24" fill="#CFE3F7" stroke="#2E75B6" stroke-width="5"/>
+	<text x="3040" y="768" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">BotGrain</text>
+	<rect x="2630" y="850" width="820" height="130" rx="24" ry="24" fill="#E8E8E8" stroke="#706F6F" stroke-width="5"/>
+	<text x="3040" y="938" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">ScriptGrain</text>
+	<rect x="2630" y="1020" width="820" height="130" rx="24" ry="24" fill="#CFE3F7" stroke="#2E75B6" stroke-width="5"/>
+	<text x="3040" y="1108" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="normal" fill="#1D1D1B" text-anchor="middle">BotGrain</text>
+	<text x="3040" y="1700" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="bold" fill="#CC6600" text-anchor="middle">Silo 3 (host process)</text>
+	<text x="1920" y="1950" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="normal" fill="#706F6F" text-anchor="middle">One process hosts one silo — Orleans decides which silo activates which grain.</text>
+	<!-- Footer link -->
+	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">13</text>
+</svg>

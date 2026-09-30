@@ -12,8 +12,7 @@
 
 	<!-- Slide title, top left -->
 	<text x="120" y="220" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Who is presenting?</text>
-	<rect x="120" y="260" width="2200" height="6" fill="#1D1D1B" opacity="0.15"/>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">Single-Threaded Grains</text>
 
 	<!-- Logo: net-assemble-logo.svg, top right -->
 	<svg x="3290" y="90" width="450" height="228.4" viewBox="0 0 351 178" preserveAspectRatio="xMidYMid meet">
@@ -115,6 +114,56 @@
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>
 
+	<defs>
+		<marker id="arrowInk" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#1D1D1B"/>
+		</marker>
+		<marker id="arrowOrange" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+			<path d="M 0 0 L 12 6 L 0 12 z" fill="#CC6600"/>
+		</marker>
+	</defs>
+	<!-- Many callers -->
+	<rect x="180" y="560" width="560" height="210" rx="36" ry="36" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<text x="460" y="695" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Caller A</text>
+	<line x1="780" y1="665" x2="1150" y2="960" stroke="#1D1D1B" stroke-width="12" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+	<rect x="180" y="940" width="560" height="210" rx="36" ry="36" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<text x="460" y="1075" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Caller B</text>
+	<line x1="780" y1="1045" x2="1150" y2="1060" stroke="#1D1D1B" stroke-width="12" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+	<rect x="180" y="1320" width="560" height="210" rx="36" ry="36" fill="#FFFFFF" fill-opacity="0.80" stroke="#1D1D1B" stroke-width="5"/>
+	<text x="460" y="1455" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="bold" fill="#1D1D1B" text-anchor="middle">Caller C</text>
+	<line x1="780" y1="1425" x2="1150" y2="1160" stroke="#1D1D1B" stroke-width="12" stroke-linecap="round" marker-end="url(#arrowInk)"/>
+
+	<!-- Calls wait in the grain's queue -->
+	<rect x="1180" y="860" width="880" height="400" rx="44" ry="44" fill="#FFFFFF" fill-opacity="0.45" stroke="#706F6F" stroke-width="6" stroke-dasharray="24 18"/>
+	<text x="1620" y="820" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="normal" fill="#706F6F" text-anchor="middle">calls wait in a queue</text>
+	<rect x="1240" y="960" width="230" height="200" rx="26" ry="26" fill="#CFE3F7" stroke="#2E75B6" stroke-width="5"/>
+	<text x="1355" y="1085" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="normal" fill="#1D1D1B" text-anchor="middle">call</text>
+	<rect x="1510" y="960" width="230" height="200" rx="26" ry="26" fill="#CFE3F7" stroke="#2E75B6" stroke-width="5"/>
+	<text x="1625" y="1085" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="normal" fill="#1D1D1B" text-anchor="middle">call</text>
+	<rect x="1780" y="960" width="230" height="200" rx="26" ry="26" fill="#CFE3F7" stroke="#2E75B6" stroke-width="5"/>
+	<text x="1895" y="1085" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="normal" fill="#1D1D1B" text-anchor="middle">call</text>
+	<line x1="2110" y1="1060" x2="2400" y2="1060" stroke="#CC6600" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowOrange)"/>
+	<text x="2255" y="990" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="normal" fill="#CC6600" text-anchor="middle">one at a time</text>
+
+	<!-- The grain runs a single turn -->
+	<circle cx="2900" cy="1060" r="330" fill="#FFE0BF" fill-opacity="0.9" stroke="#CC6600" stroke-width="8"/>
+	<text x="2900" y="1010" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="bold" fill="#1D1D1B" text-anchor="middle">PlayerGrain</text>
+	<text x="2900" y="1110" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="normal" fill="#CC6600" text-anchor="middle">executing one call</text>
+	<rect x="2570" y="1450" width="660" height="130" rx="40" ry="40" fill="#FFFFFF" fill-opacity="0.85" stroke="#CC6600" stroke-width="6"/>
+	<text x="2900" y="1535" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#CC6600" text-anchor="middle">single thread</text>
+
+	<!-- Takeaway -->
+	<circle cx="560" cy="1800" r="20" fill="#4E9A51"/>
+	<text x="760" y="1822" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#1D1D1B" text-anchor="middle">no locks</text>
+	<circle cx="1637" cy="1800" r="20" fill="#4E9A51"/>
+	<text x="1920" y="1822" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#1D1D1B" text-anchor="middle">no data races</text>
+	<circle cx="2694" cy="1800" r="20" fill="#4E9A51"/>
+	<text x="3080" y="1822" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#1D1D1B" text-anchor="middle">no synchronization</text>
+	<text x="1920" y="1960" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="normal" fill="#706F6F" text-anchor="middle">A grain never runs on two threads at once — the runtime handles concurrency for you.</text>
+	<!-- Footer link -->
+	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
-		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">02</text></svg>
+		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">16</text>
+</svg>
