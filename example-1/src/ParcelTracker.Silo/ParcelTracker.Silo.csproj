@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Orleans.Dashboard" Version="10.3.1" />
+    <PackageReference Include="Microsoft.Orleans.Server" Version="10.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ParcelTracker.Grains\ParcelTracker.Grains.csproj" />
+    <ProjectReference Include="..\ParcelTracker.ServiceDefaults\ParcelTracker.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

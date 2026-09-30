@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/aspire/">
+    <Project Path="src/ParcelTracker.AppHost/ParcelTracker.AppHost.csproj" />
+    <Project Path="src/ParcelTracker.ServiceDefaults/ParcelTracker.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/ParcelTracker.Abstractions/ParcelTracker.Abstractions.csproj" />
+    <Project Path="src/ParcelTracker.Grains/ParcelTracker.Grains.csproj" />
+    <Project Path="src/ParcelTracker.Silo/ParcelTracker.Silo.csproj" />
+    <Project Path="src/ParcelTracker.Web/ParcelTracker.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ParcelTracker.Tests/ParcelTracker.Tests.csproj" />
+  </Folder>
+</Solution>

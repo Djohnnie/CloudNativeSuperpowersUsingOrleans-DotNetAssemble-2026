@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/aspire/">
+    <Project Path="src/SuperheroHQ.AppHost/SuperheroHQ.AppHost.csproj" />
+    <Project Path="src/SuperheroHQ.ServiceDefaults/SuperheroHQ.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/SuperheroHQ.Abstractions/SuperheroHQ.Abstractions.csproj" />
+    <Project Path="src/SuperheroHQ.Client/SuperheroHQ.Client.csproj" />
+    <Project Path="src/SuperheroHQ.Grains/SuperheroHQ.Grains.csproj" />
+    <Project Path="src/SuperheroHQ.Silo/SuperheroHQ.Silo.csproj" />
+    <Project Path="src/SuperheroHQ.Web/SuperheroHQ.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SuperheroHQ.Tests/SuperheroHQ.Tests.csproj" />
+  </Folder>
+</Solution>

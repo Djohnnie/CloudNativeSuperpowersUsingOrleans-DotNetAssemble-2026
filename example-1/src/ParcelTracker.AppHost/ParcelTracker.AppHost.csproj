@@ -1,0 +1,16 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.6.0">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>0a4c8b5d-6e31-4d2a-9f07-5b1c2e8a4d63</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ParcelTracker.Silo\ParcelTracker.Silo.csproj" />
+    <ProjectReference Include="..\ParcelTracker.Web\ParcelTracker.Web.csproj" />
+  </ItemGroup>
+
+</Project>
