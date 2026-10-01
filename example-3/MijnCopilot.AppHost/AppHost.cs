@@ -24,6 +24,7 @@ var orleans = builder.AddProject<Projects.MijnCopilot_Orleans_Host>("orleans", l
                     url.Url = "/dashboard";
                     url.DisplayText = "Orleans dashboard";
                 })
+                .WithEnvironment("ASPNETCORE_ENVIRONMENT", builder.Environment.EnvironmentName)
                 .WithEnvironment("AZUREOPENAI_ENDPOINT", openAiEndpoint)
                 .WithEnvironment("AZUREOPENAI_DEPLOYMENT", openAiDeployment)
                 .WithEnvironment("AZUREOPENAI_KEY", openAiKey);
@@ -34,6 +35,9 @@ var web = builder.AddProject<Projects.MijnCopilot_Web>("web", launchProfileName:
             .WaitFor(storage)
             .WithHttpEndpoint(port: 5080, name: "http", isProxied: false)
             .WithExternalHttpEndpoints()
+            // Without a launch profile the app would run as Production, where package static
+            // web assets (_content/MudBlazor/...) are not resolved and return HTTP 500.
+            .WithEnvironment("ASPNETCORE_ENVIRONMENT", builder.Environment.EnvironmentName)
             .WithEnvironment("AUTH0_DOMAIN", auth0Domain)
             .WithEnvironment("AUTH0_CLIENTID", auth0ClientId)
             .WithEnvironment("AUTH0_CLIENTSECRET", auth0ClientSecret);
