@@ -151,8 +151,10 @@
 	<text x="3040" y="1700" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="bold" fill="#CC6600" text-anchor="middle">Silo 3 (host process)</text>
 	<text x="1920" y="1950" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="normal" fill="#706F6F" text-anchor="middle">One process hosts one silo — Orleans decides which silo activates which grain.</text>
 	<!-- Footer link -->
-	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
-		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
+	<a href="https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026">
+		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
+	</a>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
 		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">13</text>

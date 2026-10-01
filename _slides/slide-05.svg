@@ -113,7 +113,7 @@
 	176.4,83.6 196.1,60.6 196.1,54.9 185.5,59.8 185.5,52 194.4,49.9 194.4,43.2 185.5,44.1 185.5,38.3 "/>
 <polygon class="st0" points="135.1,36.8 141.7,37.8 141.7,31 130.1,31 "/>
 	</svg>	<!-- CSharpWars turn-loop code -->
-	<rect x="180" y="420" width="3480" height="1450" rx="20" fill="#1D1D1B" stroke="#CC6600" stroke-width="8"/>
+	<rect x="180" y="420" width="3480" height="1615" rx="20" fill="#1D1D1B" stroke="#CC6600" stroke-width="8"/>
 	<g font-family="Consolas, 'Courier New', monospace" font-size="66" font-weight="bold">
 		<text x="300" y="570" fill="#F4F4F4"><tspan fill="#6E7DFF">var</tspan><tspan> step = </tspan><tspan fill="#D8B45A">LoadFromMemory</tspan><tspan fill="#5CC5E0">&lt;Int32&gt;</tspan><tspan>(</tspan><tspan fill="#FF7777">&quot;STEP&quot;</tspan><tspan>);</tspan></text>
 		<text x="300" y="720" fill="#F4F4F4"><tspan fill="#E27AFF">if</tspan><tspan> ( step % </tspan><tspan fill="#5FE39B">3</tspan><tspan> == </tspan><tspan fill="#5FE39B">0</tspan><tspan> )</tspan></text>
@@ -124,12 +124,12 @@
 		<text x="300" y="1470" fill="#F4F4F4">{</text>
 		<text x="480" y="1620" fill="#F4F4F4"><tspan fill="#D8B45A">WalkForward</tspan><tspan>();</tspan></text>
 		<text x="300" y="1770" fill="#F4F4F4">}</text>
+		<text x="300" y="1920" fill="#F4F4F4"><tspan fill="#D8B45A">StoreInMemory</tspan><tspan fill="#5CC5E0">&lt;Int32&gt;</tspan><tspan>(</tspan><tspan fill="#FF7777">&quot;STEP&quot;</tspan><tspan>, </tspan><tspan fill="#6E7DFF">step</tspan><tspan>);</tspan></text>
 	</g>
-	<text x="300" y="1840" font-family="Consolas, 'Courier New', monospace" font-size="66" font-weight="bold" fill="#F4F4F4"><tspan fill="#D8B45A">StoreInMemory</tspan><tspan fill="#5CC5E0">&lt;Int32&gt;</tspan><tspan>(</tspan><tspan fill="#FF7777">&quot;STEP&quot;</tspan><tspan>, </tspan><tspan fill="#6E7DFF">step</tspan><tspan>);</tspan></text>
 	<!-- Footer link -->
-	<a href="https://github.com/Djohnnie/BuildingCloudNativeApplicationsUsingOrleans-UpdateConferenceKrakow-2025">
+	<a href="https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026">
 		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
-			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">github.com/Djohnnie/BuildingCloudNativeApplicationsUsingOrleans-UpdateConferenceKrakow-2025</text>
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
 	</a>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"

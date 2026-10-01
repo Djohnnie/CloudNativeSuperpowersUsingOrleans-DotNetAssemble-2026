@@ -832,8 +832,10 @@
 	</svg>
 
 	<!-- Footer link -->
-	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
-		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
+	<a href="https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026">
+		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
+	</a>
 
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"

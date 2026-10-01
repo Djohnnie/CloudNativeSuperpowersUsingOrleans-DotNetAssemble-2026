@@ -123,15 +123,15 @@
 	<text x="2787" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="normal" fill="#1D1D1B" text-anchor="start">&#160;&#160;[&#160;+&#160;</text>
 	<text x="3098" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="bold" fill="#4E9A51" text-anchor="start">state</text>
 	<text x="3500" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="134" font-weight="normal" fill="#1D1D1B" text-anchor="start">&#160;]</text>
-	<path d="M 1273 894 L 1273 860 L 1900 860 L 1900 894" fill="none" stroke="#CC6600" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-	<path d="M 1586 860 L 1586 816" fill="none" stroke="#CC6600" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-	<text x="1586" y="760" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#CC6600" text-anchor="middle">"player/djohnnie"</text>
-	<path d="M 2071 1116 L 2071 1150 L 2779 1150 L 2779 1116" fill="none" stroke="#2E75B6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-	<path d="M 2425 1150 L 2425 1194" fill="none" stroke="#2E75B6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-	<text x="2425" y="1360" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#2E75B6" text-anchor="middle">class PlayerGrain : Grain, IPlayerGrain</text>
-	<path d="M 3106 894 L 3106 860 L 3492 860 L 3492 894" fill="none" stroke="#4E9A51" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-	<path d="M 3299 860 L 3299 816" fill="none" stroke="#4E9A51" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-	<text x="3298" y="760" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#4E9A51" text-anchor="middle">in memory or persisted</text>
+	<path d="M 1278.5 894 L 1278.5 860 L 1736.5 860 L 1736.5 894" fill="none" stroke="#CC6600" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M 1507.5 860 L 1507.5 816" fill="none" stroke="#CC6600" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<text x="1507.5" y="760" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#CC6600" text-anchor="middle">"player/djohnnie"</text>
+	<path d="M 2075.5 1116 L 2075.5 1150 L 2702.5 1150 L 2702.5 1116" fill="none" stroke="#2E75B6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M 2389 1150 L 2389 1194" fill="none" stroke="#2E75B6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<text x="2389" y="1360" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#2E75B6" text-anchor="middle">class PlayerGrain : Grain, IPlayerGrain</text>
+	<path d="M 3104.5 894 L 3104.5 860 L 3402.5 860 L 3402.5 894" fill="none" stroke="#4E9A51" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M 3253.5 860 L 3253.5 816" fill="none" stroke="#4E9A51" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+	<text x="3253.5" y="760" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#4E9A51" text-anchor="middle">in memory or persisted</text>
 	<circle cx="640" cy="1540" r="18" fill="#CC6600"/>
 	<text x="700" y="1560" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="bold" fill="#CC6600" text-anchor="start">identity</text>
 	<text x="1090" y="1560" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#706F6F" text-anchor="start">a unique key you choose — no lookup, no registry</text>
@@ -142,8 +142,10 @@
 	<text x="700" y="1780" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="bold" fill="#4E9A51" text-anchor="start">state</text>
 	<text x="1090" y="1780" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="normal" fill="#706F6F" text-anchor="start">optional, kept in memory and saved to storage</text>
 	<!-- Footer link -->
-	<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
-		  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
+	<a href="https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026">
+		<text x="1920" y="2100" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="normal"
+			  fill="#1D1D1B" fill-opacity="0.45" text-anchor="middle">https://github.com/Djohnnie/CloudNativeSuperpowersUsingOrleans-DotNetAssemble-2026</text>
+	</a>
 	<!-- Slide index number, bottom right -->
 	<text x="3740" y="2080" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="bold"
 		  fill="#1D1D1B" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" text-anchor="end">12</text>
