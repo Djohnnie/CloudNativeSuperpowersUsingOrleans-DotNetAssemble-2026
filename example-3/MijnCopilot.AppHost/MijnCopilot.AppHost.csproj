@@ -1,0 +1,20 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.6.0">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>bb957262-71ec-4e1d-b066-9e1133dafb9c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.Azure.Storage" Version="13.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MijnCopilot.Orleans.Host\MijnCopilot.Orleans.Host.csproj" />
+    <ProjectReference Include="..\MijnCopilot.Web\MijnCopilot.Web.csproj" />
+  </ItemGroup>
+
+</Project>

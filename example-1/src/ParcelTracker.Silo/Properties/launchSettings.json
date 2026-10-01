@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ParcelTracker.Silo": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:59150;http://localhost:59151"
+    }
+  }
+}

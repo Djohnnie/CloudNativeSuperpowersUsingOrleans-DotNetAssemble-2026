@@ -1,0 +1,59 @@
+﻿@using MediatR
+@using MijnCopilot.Application.Chats.Queries
+@using MijnCopilot.Web.Helpers
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims
+
+@implements IDisposable
+
+@inject NavigationHelper NavigationHelper
+@inject IMediator Mediator
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<MudNavMenu>
+    <MudNavLink Class="mt-2" Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+    <MudNavLink Href="start" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Start hier</MudNavLink>
+
+    @if (NavigationHelper.Links.Any())
+    {
+        <MudDivider Class="my-2" />
+
+        @foreach (var link in NavigationHelper.Links)
+        {
+            <MudNavLink Href="@link.Url" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Chat">@link.Title</MudNavLink>
+        }
+    }
+</MudNavMenu>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        NavigationHelper.LinksChanged += OnLinksChanged;
+
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        if (authState.User.Identity?.IsAuthenticated != true)
+        {
+            return;
+        }
+
+        var userId = authState.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+
+        var response = await Mediator.Send(new GetActiveChatsQuery { UserId = userId });
+
+        response.Chats.ForEach(chat =>
+        {
+            NavigationHelper.AddLink(chat.Id, chat.Title, $"/chat/{chat.Id}");
+        });
+    }
+
+    private void OnLinksChanged(object? sender, EventArgs e)
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        NavigationHelper.LinksChanged -= OnLinksChanged;
+    }
+}

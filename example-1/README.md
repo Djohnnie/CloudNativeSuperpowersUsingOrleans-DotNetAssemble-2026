@@ -33,8 +33,10 @@ dotnet run --project src/ParcelTracker.AppHost
 ```
 
 No container runtime needed - there is nothing to containerise. The Aspire
-dashboard opens automatically and starts five resources: three silos and the web
-control panel.
+dashboard is at <https://localhost:17201> and starts four resources: three silos
+and the web control panel. From the CLI, use the login URL printed in the terminal;
+in Visual Studio, set `ParcelTracker.AppHost` as the startup project to launch
+the dashboard in a browser.
 
 | Resource | URL | What it is |
 | --- | --- | --- |

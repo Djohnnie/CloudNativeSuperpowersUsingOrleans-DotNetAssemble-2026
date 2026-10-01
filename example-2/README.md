@@ -28,17 +28,21 @@ one dashboard for logs, traces and metrics of the whole cluster.
 dotnet run --project src/SuperheroHQ.AppHost
 ```
 
-This needs a container runtime (Docker Desktop or Podman) for Redis. The Aspire dashboard
-opens automatically:
+This needs a running container runtime (Docker Desktop or Podman) for Redis. The
+Aspire dashboard is at <https://localhost:17202>. From the CLI, use the login URL
+printed in the terminal; in Visual Studio, set `SuperheroHQ.AppHost` as the
+startup project to launch the dashboard in a browser:
 
-- `silo` runs with **3 replicas**, forming one Orleans cluster over Redis membership.
-  Each replica exposes the Orleans Dashboard on its own HTTP endpoint at `/dashboard`.
-- `web` is the control panel: a button per silo HTTP endpoint, handy for poking the
-  cluster live without leaving the browser.
+- `silo1`, `silo2` and `silo3` are separate resources in one Orleans cluster over
+  Redis membership. Each has an **Orleans Dashboard** link pointing to
+  <http://localhost:5001/dashboard>, <http://localhost:5002/dashboard> or
+  <http://localhost:5003/dashboard>, respectively.
+- `web` is the control panel at <http://localhost:5080>; select which silo receives
+  each request.
 - `demo` is configured with **explicit start**: press *Start* on the resource when you
   are ready to tell the story.
-- Change `.WithReplicas(3)` in `AppHost.cs` to scale the cluster; nothing in the grains
-  changes.
+- Change `SiloCount` in `AppHost.cs` to scale the cluster; keep the matching value
+  and selector options in the web app in step. Nothing in the grains changes.
 
 Aspire also swaps the providers without touching a single grain: standalone, grain state
 lives in memory and clustering is localhost-only; under Aspire, both are backed by Redis.
@@ -119,11 +123,10 @@ Open <http://localhost:5080>. Under Aspire it is the `web` resource and needs no
 configuration.
 
 It is deliberately *not* an Orleans client. A single catch-all route proxies
-`/api/{**path}` to the silo server-side, which keeps the browser free of CORS and means
-the panel only depends on the silo's HTTP surface. Under Aspire the proxy target is
-`http://silo`, so service discovery spreads the calls over the three replicas and you can
-watch the `silo` field in the responses change; standalone it targets instance 1 on
-`http://localhost:5001`.
+`/api/{**path}?silo=N` to the selected silo server-side, which keeps the browser free of
+CORS and means the panel only depends on the silo's HTTP surface. Under Aspire,
+service discovery resolves `http://siloN`; standalone the corresponding silo listens
+on `http://localhost:500N`. Requests without a selection default to silo 1.
 
 ## Tests
 

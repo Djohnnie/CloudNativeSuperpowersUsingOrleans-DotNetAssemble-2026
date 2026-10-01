@@ -1,0 +1,171 @@
+﻿@using MijnCopilot.Web.Helpers
+
+@page "/"
+@implements IDisposable
+
+@inject NavigationHelper NavigationHelper
+@inject NavigationManager NavigationManager
+
+<PageTitle>MijnCopilot</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8 mb-8">
+
+    @* ---- Hero ---- *@
+    <MudStack AlignItems="AlignItems.Center" Spacing="3" Class="mb-10 text-center">
+        <div style="width: 80px; height: 80px; border-radius: 20px; background: var(--mud-palette-primary); display: flex; align-items: center; justify-content: center;">
+            <MudIcon Icon="@Icons.Material.Filled.Webhook" Style="font-size: 2.8rem; color: white;" />
+        </div>
+        <MudText Typo="Typo.h2" Style="font-weight: 700; letter-spacing: -1px;">MijnCopilot</MudText>
+        <MudText Typo="Typo.h6" Color="Color.Secondary">
+            Jouw persoonlijke AI-assistent voor slimme gesprekken
+        </MudText>
+        <MudText Typo="Typo.body1" Style="max-width: 520px; line-height: 1.7;" Class="mt-1">
+            MijnCopilot helpt je snel antwoorden te vinden, ideeën te verkennen en taken te voltooien —
+            gewoon door een gesprek te starten.
+        </MudText>
+        <MudStack Row="true" Spacing="2" Class="mt-2">
+            <AuthorizeView>
+                <Authorized>
+                    <MudButton Href="/start" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large"
+                               StartIcon="@Icons.Material.Filled.Add" Style="border-radius: 12px; padding: 10px 28px;">
+                        Nieuw gesprek starten
+                    </MudButton>
+                </Authorized>
+                <NotAuthorized>
+                    <MudButton Href="/Login" Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large"
+                               StartIcon="@Icons.Material.Filled.Login" Style="border-radius: 12px; padding: 10px 28px;">
+                        Inloggen
+                    </MudButton>
+                    <MudButton Href="/start" Variant="Variant.Outlined" Color="Color.Primary" Size="Size.Large"
+                               Style="border-radius: 12px; padding: 10px 28px;">
+                        Probeer als gast
+                    </MudButton>
+                </NotAuthorized>
+            </AuthorizeView>
+        </MudStack>
+    </MudStack>
+
+    <MudDivider Class="mb-10" />
+
+    @* ---- Features ---- *@
+    <MudText Typo="Typo.h5" Align="Align.Center" Style="font-weight: 600;" Class="mb-6">Wat kan MijnCopilot?</MudText>
+    <MudGrid Spacing="4" Class="mb-10" Justify="Justify.Center">
+        <MudItem xs="12" sm="4">
+            <MudPaper Class="pa-6" Elevation="0" Style="height: 100%; border: 1px solid var(--mud-palette-lines-default); border-radius: 16px;">
+                <MudStack AlignItems="AlignItems.Center" Spacing="3">
+                    <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--mud-palette-primary); display: flex; align-items: center; justify-content: center;">
+                        <MudIcon Icon="@Icons.Material.Filled.Chat" Style="color: white;" />
+                    </div>
+                    <MudText Typo="Typo.h6" Align="Align.Center" Style="font-weight: 600;">Slimme gesprekken</MudText>
+                    <MudText Typo="Typo.body2" Color="Color.Secondary" Align="Align.Center" Style="line-height: 1.6;">
+                        Start een gesprek en krijg direct relevante antwoorden op je vragen.
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" sm="4">
+            <MudPaper Class="pa-6" Elevation="0" Style="height: 100%; border: 1px solid var(--mud-palette-lines-default); border-radius: 16px;">
+                <MudStack AlignItems="AlignItems.Center" Spacing="3">
+                    <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--mud-palette-primary); display: flex; align-items: center; justify-content: center;">
+                        <MudIcon Icon="@Icons.Material.Filled.History" Style="color: white;" />
+                    </div>
+                    <MudText Typo="Typo.h6" Align="Align.Center" Style="font-weight: 600;">Gespreksgeschiedenis</MudText>
+                    <MudText Typo="Typo.body2" Color="Color.Secondary" Align="Align.Center" Style="line-height: 1.6;">
+                        Al je gesprekken worden bewaard zodat je ze altijd kunt terugvinden.
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" sm="4">
+            <MudPaper Class="pa-6" Elevation="0" Style="height: 100%; border: 1px solid var(--mud-palette-lines-default); border-radius: 16px;">
+                <MudStack AlignItems="AlignItems.Center" Spacing="3">
+                    <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--mud-palette-primary); display: flex; align-items: center; justify-content: center;">
+                        <MudIcon Icon="@Icons.Material.Filled.Psychology" Style="color: white;" />
+                    </div>
+                    <MudText Typo="Typo.h6" Align="Align.Center" Style="font-weight: 600;">Krachtige AI</MudText>
+                    <MudText Typo="Typo.body2" Color="Color.Secondary" Align="Align.Center" Style="line-height: 1.6;">
+                        Aangedreven door de nieuwste AI-technologie voor nauwkeurige resultaten.
+                    </MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+
+    @* ---- Recent chats (authenticated only) ---- *@
+    <AuthorizeView>
+        <Authorized>
+            <MudDivider Class="mb-8" />
+            <MudStack Row="true" AlignItems="AlignItems.Center" Justify="Justify.SpaceBetween" Class="mb-5">
+                <MudText Typo="Typo.h5" Style="font-weight: 600;">Recente gesprekken</MudText>
+                <MudButton Href="/start" Variant="Variant.Text" Color="Color.Primary"
+                           EndIcon="@Icons.Material.Filled.ArrowForward" Size="Size.Small">
+                    Nieuw gesprek
+                </MudButton>
+            </MudStack>
+            @if (_chats.Any())
+            {
+                <MudGrid Spacing="3">
+                    @foreach (var chat in _chats)
+                    {
+                        <MudItem xs="12" sm="6" md="4">
+                            <MudPaper @onclick="@(() => NavigationManager.NavigateTo(chat.Url))"
+                                      Class="pa-4" Elevation="0"
+                                      Style="cursor: pointer; border: 1px solid var(--mud-palette-lines-default); border-radius: 12px; transition: border-color 0.15s;">
+                                <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="3">
+                                    <div style="width: 36px; height: 36px; border-radius: 8px; background: var(--mud-palette-primary); flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                                        <MudIcon Icon="@Icons.Material.Filled.Chat" Style="color: white; font-size: 1.1rem;" />
+                                    </div>
+                                    <MudStack Spacing="0" Style="min-width: 0;">
+                                        <MudText Typo="Typo.body1" Style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500;">
+                                            @chat.Title
+                                        </MudText>
+                                    </MudStack>
+                                    <MudSpacer />
+                                    <MudIcon Icon="@Icons.Material.Filled.ChevronRight" Color="Color.Secondary" Style="flex-shrink: 0;" />
+                                </MudStack>
+                            </MudPaper>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+            else
+            {
+                <MudPaper Class="pa-8" Elevation="0"
+                          Style="border: 1px dashed var(--mud-palette-lines-default); border-radius: 16px; text-align: center;">
+                    <MudStack AlignItems="AlignItems.Center" Spacing="3">
+                        <MudIcon Icon="@Icons.Material.Outlined.ChatBubbleOutline" Style="font-size: 3rem;" Color="Color.Secondary" />
+                        <MudText Typo="Typo.h6" Color="Color.Secondary">Nog geen gesprekken</MudText>
+                        <MudText Typo="Typo.body2" Color="Color.Secondary">Start je eerste gesprek en het verschijnt hier.</MudText>
+                        <MudButton Href="/start" Variant="Variant.Filled" Color="Color.Primary"
+                                   StartIcon="@Icons.Material.Filled.Add" Style="border-radius: 10px; margin-top: 4px;">
+                            Begin een gesprek
+                        </MudButton>
+                    </MudStack>
+                </MudPaper>
+            }
+        </Authorized>
+    </AuthorizeView>
+
+</MudContainer>
+
+@code
+{
+    private List<NavigationItem> _chats = new();
+
+    protected override void OnInitialized()
+    {
+        _chats = NavigationHelper.Links.ToList();
+        NavigationHelper.LinksChanged += OnLinksChanged;
+    }
+
+    private void OnLinksChanged(object? sender, EventArgs e)
+    {
+        _chats = NavigationHelper.Links.ToList();
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        NavigationHelper.LinksChanged -= OnLinksChanged;
+    }
+}

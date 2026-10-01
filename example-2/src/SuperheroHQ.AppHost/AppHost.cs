@@ -5,10 +5,6 @@ var builder = DistributedApplication.CreateBuilder(args);
 var redis = builder.AddRedis("redis")
                    .WithRedisInsight();
 
-// No container runtime? Replace the Redis lines below with
-//     .WithDevelopmentClustering().WithMemoryGrainStorage("Default")
-// and drop the replica count to 1.
-
 // The Orleans cluster itself is not a container: Aspire models it as configuration
 // that gets handed to every project that references it.
 var orleans = builder.AddOrleans("superhero-hq")
@@ -18,20 +14,39 @@ var orleans = builder.AddOrleans("superhero-hq")
                      .WithGrainStorage("villains", redis)
                      .WithGrainStorage("cities", redis);
 
-// Three silos in one cluster. Aspire gives each replica its own silo and gateway
-// port, so scaling the cluster up or down is a single number on this line.
-var silo = builder.AddProject<Projects.SuperheroHQ_Silo>("silo")
-                  .WithReference(orleans)
-                  .WithReplicas(3)
-                  .WithExternalHttpEndpoints();
+// Each silo is its own resource with the same HTTP port as when started by hand.
+// All three join the same Orleans cluster through Redis membership.
+const int SiloCount = 3;
+var silos = new List<IResourceBuilder<ProjectResource>>();
 
-// A small web control panel with a button per silo HTTP endpoint. It is not an
-// Orleans client: it proxies to the silo, so service discovery spreads the calls
-// over the replicas.
-builder.AddProject<Projects.SuperheroHQ_Web>("web")
-       .WithReference(silo)
-       .WaitFor(silo)
-       .WithExternalHttpEndpoints();
+for (var instance = 1; instance <= SiloCount; instance++)
+{
+    var silo = builder.AddProject<Projects.SuperheroHQ_Silo>($"silo{instance}", launchProfileName: null)
+                      .WithReference(orleans)
+                      .WithArgs("--instance", $"{instance}")
+                      .WithHttpEndpoint(port: 5000 + instance, name: "http", isProxied: false)
+                      .WithExternalHttpEndpoints()
+                      .WaitFor(redis)
+                      .WithUrlForEndpoint("http", url =>
+                      {
+                          url.Url = "/dashboard";
+                          url.DisplayText = "Orleans Dashboard";
+                      });
+
+    silos.Add(silo);
+}
+
+// Like example 1, the browser picks a silo; the web app proxies to it using
+// Aspire service discovery rather than connecting to Orleans itself.
+var web = builder.AddProject<Projects.SuperheroHQ_Web>("web", launchProfileName: null)
+                 .WithHttpEndpoint(port: 5080, name: "http", isProxied: false)
+                 .WithExternalHttpEndpoints()
+                 .WaitFor(silos[0]);
+
+foreach (var silo in silos)
+{
+    web.WithReference(silo);
+}
 
 // The guided console demo. It is started by hand from the Aspire dashboard so the
 // story can be told at the right moment.

@@ -1,0 +1,33 @@
+using Microsoft.Extensions.Configuration;
+using MijnCopilot.Agents.Base;
+
+namespace MijnCopilot.Agents;
+
+internal class MijnThuisSmartLockAgentFactory : AgentFactoryBase
+{
+    private string _description = "An agent that has real-time knowledge on my smart lock via MijnThuis (current lock state; current door state; smart lock battery charge percentage)";
+    private string _instructions = @"
+You should answer questions and receive commands regarding my smart lock:
+- Current state of the lock (locked/unlocked).
+- Current state of the door (open/closed).
+- Battery percentage of the smart lock
+Adhere to the following rules:
+- Just use plain text, no markdown or any other formatting.
+- Separate every sentence with a [BR] as custom newline.
+- Only answer questions and execute commands that are related to my smart lock.
+- Every request should result in a tool-call.
+- If you don't know the answer, say you don't know or can't help with that.
+- Never ask follow-up questions. If you can only answer part of the question, do so.
+";
+
+    protected override string AgentName => "MijnThuisSmartLockAgent";
+    public override string AgentDescription => _description;
+    protected override string AgentInstruction => _instructions;
+    protected override bool HasPlugin => true;
+    protected override string PluginName => "MijnThuisSmartLockPlugin";
+    protected override string McpEndpointConfig => "MIJNTHUIS_MCP";
+    protected override string McpName => "MijnThuisMcpClient";
+    protected override string McpToolPrefix => "mijnthuis_smartlock";
+
+    public MijnThuisSmartLockAgentFactory(IConfiguration configuration) : base(configuration) { }
+}

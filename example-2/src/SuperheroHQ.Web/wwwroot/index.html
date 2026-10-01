@@ -28,6 +28,9 @@
   h1 { margin: 0; font-size: 2.6rem; letter-spacing: -0.02em; }
   h1 span { color: var(--accent); }
   header p { margin: .4rem 0 0; color: var(--grey); font-size: 1.05rem; }
+  .silo-bar { max-width: 1100px; margin: 0 auto 1.5rem; display: flex; align-items: center; gap: .75rem; }
+  .silo-bar select { padding: .5rem; font: inherit; border: 2px solid var(--ink); border-radius: 8px; }
+  .silo-bar .note { color: var(--grey); }
 
   main {
     max-width: 1100px;
@@ -123,6 +126,16 @@
     <p>Control panel for the Orleans silo HTTP endpoints. Every button calls a grain.</p>
   </header>
 
+  <div class="silo-bar">
+    <strong>Talk to</strong>
+    <select id="silo" aria-label="Silo">
+      <option value="1">silo1</option>
+      <option value="2">silo2</option>
+      <option value="3">silo3</option>
+    </select>
+    <span class="note">Pick which silo receives each request; Orleans routes it to the grain.</span>
+  </div>
+
   <main>
     <section class="card">
       <h2>Hero</h2>
@@ -204,8 +217,9 @@
 
   async function send(button, method, url, body) {
     button.disabled = true;
+    const target = `${url}?silo=${document.getElementById('silo').value}`;
     try {
-      const response = await fetch(url, {
+      const response = await fetch(target, {
         method,
         headers: body ? { 'Content-Type': 'application/json' } : undefined,
         body
@@ -213,9 +227,9 @@
       const text = await response.text();
       let pretty = text;
       try { pretty = JSON.stringify(JSON.parse(text), null, 2); } catch { }
-      write(`${method} ${url}`, response.ok, pretty || `(${response.status})`);
+      write(`${method} ${target}`, response.ok, pretty || `(${response.status})`);
     } catch (error) {
-      write(`${method} ${url}`, false, error.message);
+      write(`${method} ${target}`, false, error.message);
     } finally {
       button.disabled = false;
     }

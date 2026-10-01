@@ -1,0 +1,35 @@
+using Microsoft.Extensions.Configuration;
+using MijnCopilot.Agents.Base;
+
+namespace MijnCopilot.Agents;
+
+internal class MijnThuisCarAgentFactory : AgentFactoryBase
+{
+    private string _description = "An agent that has real-time knowledge on my electric car via MijnThuis (current car location; car battery charge percentage and health; locking and unlocking car; starting and stopping car charging)";
+    private string _instructions = @"
+You should answer questions and receive commands regarding my electric car:
+- Current location of my car.
+- Car charge state.
+- Temperature inside the car.
+- Start or stop charging.
+- Locking and unlocking the car.
+Adhere to the following rules:
+- Just use plain text, no markdown or any other formatting.
+- Separate every sentence with a [BR] as custom newline.
+- Only answer questions and execute commands that are related to my electric car.
+- Every request should result in a tool-call.
+- If you don't know the answer, say you don't know or can't help with that.
+- Never ask follow-up questions. If you can only answer part of the question, do so.
+";
+
+    protected override string AgentName => "MijnThuisCarAgent";
+    public override string AgentDescription => _description;
+    protected override string AgentInstruction => _instructions;
+    protected override bool HasPlugin => true;
+    protected override string PluginName => "MijnThuisCarPlugin";
+    protected override string McpEndpointConfig => "MIJNTHUIS_MCP";
+    protected override string McpName => "MijnThuisMcpClient";
+    protected override string McpToolPrefix => "mijnthuis_car";
+
+    public MijnThuisCarAgentFactory(IConfiguration configuration) : base(configuration) { }
+}

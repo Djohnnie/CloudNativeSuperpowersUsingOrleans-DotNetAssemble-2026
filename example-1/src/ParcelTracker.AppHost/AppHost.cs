@@ -31,7 +31,7 @@ for (var instance = 1; instance <= SiloCount; instance++)
                       .WithUrlForEndpoint("http", url =>
                       {
                           url.Url = "/dashboard";
-                          url.DisplayText = $"Orleans dashboard (silo-{instance})";
+                          url.DisplayText = "Orleans Dashboard";
                       });
 
     // The primary silo owns the in-memory membership table, so it has to be up

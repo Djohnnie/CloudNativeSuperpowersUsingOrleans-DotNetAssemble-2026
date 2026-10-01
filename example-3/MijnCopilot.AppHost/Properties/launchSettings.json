@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:17203;http://localhost:15203",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOTNET_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "",
+        "Parameters__auth0-domain": "",
+        "Parameters__auth0-client-id": "",
+        "Parameters__auth0-client-secret": "",
+        "Parameters__azure-openai-endpoint": "",
+        "Parameters__azure-openai-deployment": "",
+        "Parameters__azure-openai-key": "",
+        "MIJNTHUIS_MCP": "",
+        "MIJNSAUNA_MCP": "",
+        "PHOTOCAROUSEL_MCP": "",
+        "MEDIATR_LICENSEKEY": ""
+      }
+    }
+  }
+}

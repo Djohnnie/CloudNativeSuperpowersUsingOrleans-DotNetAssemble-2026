@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/aspire/">
+    <Project Path="MijnCopilot.AppHost/MijnCopilot.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="MijnCopilot.Agents/MijnCopilot.Agents.csproj" />
+    <Project Path="MijnCopilot.Application/MijnCopilot.Application.csproj" />
+    <Project Path="MijnCopilot.Contracts/MijnCopilot.Contracts.csproj" />
+    <Project Path="MijnCopilot.DataAccess/MijnCopilot.DataAccess.csproj" />
+    <Project Path="MijnCopilot.Model/MijnCopilot.Model.csproj" />
+    <Project Path="MijnCopilot.Orleans.Host/MijnCopilot.Orleans.Host.csproj" />
+    <Project Path="MijnCopilot.Web/MijnCopilot.Web.csproj" />
+  </Folder>
+</Solution>

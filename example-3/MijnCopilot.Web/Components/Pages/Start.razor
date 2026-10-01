@@ -1,0 +1,104 @@
+@using MediatR
+@using MijnCopilot.Application.Chats.Commands
+@using MijnCopilot.Web.Helpers
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims
+
+@page "/start"
+@attribute [Authorize]
+
+@inject NavigationHelper NavigationHelper
+@inject NavigationManager NavigationManager
+@inject IMediator Mediator
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>MijnCopilot - Thuispagina</PageTitle>
+
+<MudContainer Class="pa-0 pa-sm-12">
+    <MudXChat ChatPosition="ChatBubblePosition.Start">
+        <MudAvatar Color="Color.Default">
+            <MudIcon Icon="@Icons.Material.Filled.Webhook" Color="Color.Default" />
+        </MudAvatar>
+        <MudXChatHeader Name="MijnCopilot" />
+        <MudXChatBubble Color="Color.Default">
+            Waarmee kan ik je helpen?
+        </MudXChatBubble>
+    </MudXChat>
+
+    @if (!string.IsNullOrEmpty(_request))
+    {
+        <MudXChat ChatPosition="ChatBubblePosition.End">
+            <MudAvatar Color="Color.Primary">
+                <MudIcon Icon="@Icons.Material.Filled.Face" Color="Color.Default" />
+            </MudAvatar>
+            <MudXChatHeader Name="Jij" Time="Zojuist" />
+            <MudXChatBubble Color="Color.Default">
+                @_request
+            </MudXChatBubble>
+        </MudXChat>
+    }
+
+    @if (_isLoading)
+    {
+        <MudXChat ChatPosition="ChatBubblePosition.Start">
+            <MudAvatar Color="Color.Default">
+                <MudProgressCircular Size="Size.Small" Color="Color.Default" Indeterminate="true" />
+            </MudAvatar>
+
+            <MudXChatBubble Color="Color.Default">
+                ...
+            </MudXChatBubble>
+        </MudXChat>
+    }
+</MudContainer>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="d-flex flex-column justify-center gap-4">
+    <MudTextField T="string" Label="Stel je vraag" Variant="Variant.Outlined" @bind-Value="Request" Immediate="true" OnKeyDown="@OnKeyDown" TextUpdateSuppression="false"
+                  Adornment="Adornment.End" AdornmentColor="Color.Primary" AdornmentIcon="@Icons.Material.Filled.Send" OnAdornmentClick="@AskQuestion" />
+</MudContainer>
+
+@code
+{
+    private bool _isLoading;
+    private string _request = string.Empty;
+    private string _userId = string.Empty;
+
+    public string Request { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        _userId = authState.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+    }
+
+    protected async Task AskQuestion()
+    {
+        if (string.IsNullOrWhiteSpace(Request))
+        {
+            return;
+        }
+
+        _isLoading = true;
+        _request = Request;
+        Request = string.Empty;
+
+        StateHasChanged();
+
+        var response = await Mediator.Send(new CreateNewChatCommand
+        {
+            UserId = _userId,
+            Request = _request
+        });
+
+        NavigationHelper.AddLink(response.ChatId, response.Title, $"/chat/{response.ChatId}", insert: true);
+        NavigationManager.NavigateTo($"/chat/{response.ChatId}?isChatting=true");
+    }
+
+    protected async Task OnKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await AskQuestion();
+        }
+    }
+}
